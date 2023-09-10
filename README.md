@@ -32,4 +32,7 @@ The layout remains horizontal for tablets and desktops and becomes vertical for 
 
 ## :exclamation:Validation
 
+When the user enter a negative amount, the exchange rate display text disappears, the dropdowns are getting disabled and an error message appears.
+![](validation.jpg)
+
 ## `:memo:Approach used
