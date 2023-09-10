@@ -37,3 +37,11 @@ When the user enter a negative amount, the exchange rate display text disappears
 ![](Validation.jpg)
 
 ## `:memo:Approach used
+
+- Redux Toolking has been used in order to manage the state and create the actions for the app (store.ts, currencySlice.ts, types.ts). The store file has the store configurattion while the currencySlice defines how the the states are managed. The types file defining the TS types for type safety. Finally the App is getting wrapper with the Provider and the store in order to be able to use it in our project.
+
+- A custom hook 'useCurrencyData' has beeb created in order to fetch the currency data and exchange rates by using Axios and update the redux store with the fetched data.
+
+- The project has been broken down to smaller components (such as CurrencyInput, CurrencySelect, ResultText etc) and each component includes a Vitest test.
+
+- A CurrencyConverterWrapper file has been created which includes the wrapper styles for the Converter.
