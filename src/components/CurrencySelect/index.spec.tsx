@@ -7,8 +7,8 @@ describe('CurrencySelect', () => {
     const label = 'From';
     const value = 'USD';
     const options = [
-      { code: 'USD', name: 'United States Dollar' },
-      { code: 'EUR', name: 'Euro' },
+      { code: 'USD', name: 'USD' },
+      { code: 'EUR', name: 'EUR' },
     ];
     const onChange = () => {};
 

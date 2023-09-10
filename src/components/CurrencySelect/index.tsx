@@ -39,7 +39,7 @@ const CurrencySelect: React.FC<CurrencySelectProps> = ({
       >
         {options.map((option) => (
           <option key={option.code} value={option.code}>
-            {option.name.toUpperCase()}
+            {option.code.toUpperCase()}
           </option>
         ))}
       </select>

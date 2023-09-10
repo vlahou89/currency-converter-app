@@ -1,22 +1,17 @@
 import React from 'react';
 
 interface AlertProps {
-  type: 'error';
   message: string;
 }
 
-const ErrorMessage: React.FC<AlertProps> = ({ type, message }) => {
-  const alertClasses = {
-    error: 'bg-red-500 text-white font-bold rounded-t px-4 py-2 mt-12',
-  };
-
+const ErrorMessage: React.FC<AlertProps> = ({ message }) => {
   return (
     <div role="alert">
-      <div className={alertClasses[type]}>
-        {type.charAt(0).toUpperCase() + type.slice(1)}
+      <div className="bg-red-500 text-white font-bold rounded-t px-4 py-2 mt-12">
+        Alert
       </div>
       <div
-        className={`border border-t-0 border-${type}-400 rounded-b bg-${type}-100 px-4 py-3 text-${type}-700 bg-white `}
+        className={`border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700 `}
       >
         <p>{message}</p>
       </div>

@@ -30,7 +30,7 @@ const CurrencyConverter: React.FC = () => {
   const negativeAmount = amount < 0;
 
   return (
-    <CurrencyConverterWrapper>
+    <CurrencyConverterWrapper testId="my-wrapper">
       <h1 className="text-3xl md:text-5xl font-bold tracking-wider text-sky-100 mt-0">
         Currency Converter
       </h1>
@@ -87,10 +87,7 @@ const CurrencyConverter: React.FC = () => {
           targetCurrency={targetCurrency}
         />
       ) : (
-        <ErrorMessage
-          message="Please enter an amount greater than zero in order to see the currency conversion"
-          type={'error'}
-        />
+        <ErrorMessage message="Please enter an amount greater than zero in order to see the currency conversion" />
       )}
     </CurrencyConverterWrapper>
   );

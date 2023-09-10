@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 
 interface CurrencyConverterWrapperProps {
   children: ReactNode;
+  testId?: string;
 }
 
 const CurrencyConverterWrapper: React.FC<CurrencyConverterWrapperProps> = ({
