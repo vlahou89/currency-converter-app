@@ -27,11 +27,8 @@ The Currency Convert is responsive and the fields change from horizontal to a ve
 
 ## :iphone:Responsiveness
 
-### Mobile
-
-### Tablet
-
-### Desktop
+The layout remains horizontal for tablets and desktops and becomes vertical for mobiles
+![](responsive.jpg)
 
 ## :exclamation:Validation
 

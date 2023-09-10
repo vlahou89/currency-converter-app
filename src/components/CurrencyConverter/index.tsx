@@ -31,7 +31,7 @@ const CurrencyConverter: React.FC = () => {
 
   return (
     <CurrencyConverterWrapper>
-      <h1 className="text-3xl lg:text-5xl font-bold tracking-wider text-sky-100 mt-0">
+      <h1 className="text-3xl md:text-5xl font-bold tracking-wider text-sky-100 mt-0">
         Currency Converter
       </h1>
       {!negativeAmount && (

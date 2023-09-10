@@ -28,7 +28,7 @@ const CurrencySelect: React.FC<CurrencySelectProps> = ({
 
   return (
     <div className="flex flex-col m-auto w-full md:pl-6 lg:w-1/3 mt-4 md:mt-0 md:mb-8">
-      <label className="md:text-2xl text-sky-100 lg:mt-12 tracking-wider pb-2 md:pb-4">
+      <label className="md:text-2xl text-sky-100 md:mt-12 tracking-wider pb-2 md:pb-4">
         {label}:
       </label>
       <select
