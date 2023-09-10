@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import ErrorMessage from './'; // Updated import path
+import ErrorMessage from './';
 
 describe('ErrorMessage', () => {
   it('renders an error message', () => {
