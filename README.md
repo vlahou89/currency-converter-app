@@ -8,6 +8,8 @@ If the Base Currency and Taret Currency are the same their values will get swapp
 
 The Currency Convert is responsive and the fields change from horizontal to a vertical layout for mobiles, while tablets and larger screens they are on a row.
 
+![](app.gif)
+
 ## :computer: Technologies used:
 
 - React.js
