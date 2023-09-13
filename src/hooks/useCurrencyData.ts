@@ -7,11 +7,7 @@ import {
 } from '../redux/currencySlice';
 import axios from 'axios';
 
-const useCurrencyData = (
-  baseCurrency: string,
-  targetCurrency: string,
-  amount: number
-) => {
+const useCurrencyData = (baseCurrency: string, targetCurrency: string) => {
   const dispatch = useDispatch();
 
   const fetchCurrencyDataAndExchangeRate = async () => {
@@ -65,7 +61,7 @@ const useCurrencyData = (
 
   useEffect(() => {
     fetchCurrencyDataAndExchangeRate();
-  }, [baseCurrency, targetCurrency, amount]);
+  }, [baseCurrency, targetCurrency]);
 };
 
 export default useCurrencyData;
