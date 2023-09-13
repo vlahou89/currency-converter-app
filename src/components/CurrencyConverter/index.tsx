@@ -19,7 +19,7 @@ const CurrencyConverter: React.FC = () => {
   const { baseCurrency, targetCurrency, amount, exchangeRate, currencies } =
     useSelector((state: RootState) => state.currency);
 
-  useCurrencyData(baseCurrency, targetCurrency, amount);
+  useCurrencyData(baseCurrency, targetCurrency);
 
   const selectedBaseCurrency = currencies.find(
     (currency) => currency.code === baseCurrency
