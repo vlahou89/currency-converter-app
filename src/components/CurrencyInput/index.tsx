@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 
 interface CurrencyInputProps {
   amount: number;
+  label: string;
   onChange: (value: number) => void;
 }
 
-const CurrencyInput: React.FC<CurrencyInputProps> = ({ amount, onChange }) => {
+const CurrencyInput: React.FC<CurrencyInputProps> = ({
+  amount,
+  label,
+  onChange,
+}) => {
   const [inputValue, setInputValue] = useState(amount.toString());
 
   const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +42,7 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({ amount, onChange }) => {
   return (
     <div className="flex flex-col m-auto w-full lg:py-6 lg:w-1/3">
       <label className="text-lg md:text-2xl text-sky-100 mt-4 tracking-wider pb-2 md:pb-4">
-        Amount:
+        {label}
       </label>
       <input
         type="text"

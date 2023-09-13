@@ -45,6 +45,7 @@ const CurrencyConverter: React.FC = () => {
       )}
       <div className="flex flex-col md:flex-row space-between w-full">
         <CurrencyInput
+          label="Amount:"
           amount={amount}
           onChange={(newAmount) => dispatch(setAmount(newAmount || 0))}
           data-testid="currency-input"
