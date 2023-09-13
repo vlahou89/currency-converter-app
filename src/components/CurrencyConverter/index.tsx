@@ -1,10 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  setBaseCurrency,
-  setTargetCurrency,
-  setAmount,
-} from '../../redux/currencySlice';
+import { setBaseCurrency, setTargetCurrency } from '../../redux/currencySlice';
 import { RootState } from '../../redux/types';
 import useCurrencyData from '../../hooks/useCurrencyData';
 import CurrencyInput from '../CurrencyInput';
@@ -16,8 +12,11 @@ import CurrencyConverterWrapper from '../CurrencyConverterWrapper';
 
 const CurrencyConverter: React.FC = () => {
   const dispatch = useDispatch();
-  const { baseCurrency, targetCurrency, amount, exchangeRate, currencies } =
+  const { baseCurrency, targetCurrency, exchangeRate, currencies } =
     useSelector((state: RootState) => state.currency);
+
+  // Local component state for amount
+  const [amount, setAmount] = useState<number>(1);
 
   useCurrencyData(baseCurrency, targetCurrency);
 
@@ -28,6 +27,10 @@ const CurrencyConverter: React.FC = () => {
     (currency) => currency.code === targetCurrency
   );
   const negativeAmount = amount < 0;
+
+  const handleAmountChange = (newAmount: number) => {
+    setAmount(newAmount);
+  };
 
   return (
     <CurrencyConverterWrapper testId="my-wrapper">
@@ -47,7 +50,7 @@ const CurrencyConverter: React.FC = () => {
         <CurrencyInput
           label="Amount:"
           amount={amount}
-          onChange={(newAmount) => dispatch(setAmount(newAmount || 0))}
+          onChange={handleAmountChange}
           data-testid="currency-input"
         />
         <CurrencySelect

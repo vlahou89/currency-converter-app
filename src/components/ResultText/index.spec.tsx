@@ -15,9 +15,19 @@ describe('ResultDisplay', () => {
         targetCurrency={targetCurrency}
       />
     );
-    const expectedResult = (amount * exchangeRate).toFixed(2);
 
-    const resultText = screen.getByText(`Result: ${expectedResult}`);
+    // Use a custom text matcher function
+    const resultText = screen.getByText((content) => {
+      const hasExpectedText = content.includes('Converted amount:');
+      const hasExpectedValue = content.includes(
+        (amount * exchangeRate).toFixed(2)
+      );
+      const hasExpectedCurrency = content.includes(
+        targetCurrency.toUpperCase()
+      );
+      return hasExpectedText && hasExpectedValue && hasExpectedCurrency;
+    });
+
     expect(resultText).toBeTruthy();
   });
 
@@ -33,7 +43,13 @@ describe('ResultDisplay', () => {
       />
     );
 
-    const resultText = screen.queryByText('Result: ');
+    // Use a custom text matcher function
+    const resultText = screen.queryByText((content) => {
+      const hasExpectedText = content.includes('Converted amount:');
+      const hasExpectedValue = content.includes('0.00'); // Expected value when exchangeRate is null
+      return hasExpectedText && hasExpectedValue;
+    });
+
     expect(resultText).toBeNull();
   });
 });

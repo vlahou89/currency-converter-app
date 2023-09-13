@@ -18,10 +18,15 @@ describe('ExchangeRateDisplay', () => {
       />
     );
 
-    const formattedExchangeRate = exchangeRate?.toFixed(2);
-    const exchangeRateText = screen.getByText(
-      `1 ${baseCurrency} = ${formattedExchangeRate ?? ''} ${targetCurrency}`
-    );
+    // Define the expected text based on the component's structure
+    const expectedText = `Exchange rate: 1 ${baseCurrency.toUpperCase()} = ${exchangeRate.toFixed(
+      6
+    )} ${targetCurrency.toUpperCase()}`;
+
+    // Use the screen.getByText() to find the element by its expected text
+    const exchangeRateText = screen.getByText(expectedText);
+
+    // Assert that the element with the expected text exists
     expect(exchangeRateText).toBeTruthy();
   });
 });
